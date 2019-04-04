@@ -28,3 +28,4 @@ TO-DO LIST
 5. User interface specifications
 6. ASCII character conversions
 7. Key formatting
+8. Convert all algorithms from hard code to Variable input if not done already
