@@ -5,6 +5,9 @@ int main() {
    int x = 1;   /* x is the character of message text that will be encoded. If x=0, this corresponds to the letter a, while if x = 1, the letter b is represented */ 
    int ex = 0; /* ex is the encrypted character of message text*/
    
+   char msg[255];
+   scanf("%s", msg);
+   
    ex = (x + key) % 26; /* encyrption equation */
    
    printf("%d\n", ex);
