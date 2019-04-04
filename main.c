@@ -2,5 +2,5 @@
 
 int main() {
     printf("test commit");
-    int x = 0;
+    float x = 0;
 }
