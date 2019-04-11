@@ -15,15 +15,14 @@ int main() {
    /*int count = 0;
    for(count = 0; count < 4; count++) {
        x = testString[count] + key;*/
-       x = testEncrypt
-       printf("%c", x);
+       printf("%c", testEncrypt);
    }
    
 char testEncrypt(char x) {
     int key = 1;
     int count = 0;
     for(count = 0; count < 4; count++)
-        x = testString[count] + key;
+        x = *testString[count] + key;
         return x;
 }
    return 0;
