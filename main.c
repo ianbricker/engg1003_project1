@@ -1,27 +1,30 @@
 #include <stdio.h>
-// week 6 lab commit
+// week 7 lab commit
+char testEncrypt(char x);
+
 int main() { 
-   //char key = 1; /* key is the amount of letter positions the rotation cipher will encrypt */
-   char x = 0;   /* x is the character of message text that will be encoded. If x=0, this corresponds to the letter a, while if x = 1, the letter b is represented */ 
-   //char ex = 0; /* ex is the encrypted character of message text*/
+   //int key = 1; /* key is the amount of letter positions the rotation cipher will encrypt */
+   //char x = 0;   /*UPDATE THIS COMMENT x is the character of message text that will be encoded. If x=0, this corresponds to the letter a, while if x = 1, the letter b is represented */ 
+
    
    /*char msg[255];
    scanf("%s", msg);*/
    
-   char testString[6] = {'t', 'e', 's', 't', '\0'};
+   char testString[] = "test";
    
-   int count = 0;
+   /*int count = 0;
    for(count = 0; count < 4; count++) {
-       x = testString[count] + 1;
-       //ex = (x + key) % 26; /*this is the best way to do it on paper, try a different way*/
+       x = testString[count] + key;*/
+       x = testEncrypt
        printf("%c", x);
    }
    
-   //ex = (x + key) % 26; /* encryption equation */
-   
-   //printf("%d\n", ex);
-   
-   
-   
+char testEncrypt(char x) {
+    int key = 1;
+    int count = 0;
+    for(count = 0; count < 4; count++)
+        x = testString[count] + key;
+        return x;
+}
    return 0;
 }
