@@ -15,7 +15,7 @@ int main() {
    /*int count = 0;
    for(count = 0; count < 4; count++) {
        x = testString[count] + key;*/
-       printf("%c", testEncrypt);
+       printf("%c", x);
    }
    
 char testEncrypt(char x) {
@@ -27,3 +27,20 @@ char testEncrypt(char x) {
 }
    return 0;
 }
+
+/*#include <stdio.h>
+
+char *test(char s[]);
+
+int main() {
+    char testArray[] = "test";
+    printf("%s", test(testArray));
+    return 0;
+
+}
+
+char *test(char s[]) {
+    s[0] = 'C';
+    return s;
+    
+} */
