@@ -28,19 +28,28 @@ char testEncrypt(char x) {
    return 0;
 }
 
-/*#include <stdio.h>
+/* #include <stdio.h>
 
 char *test(char s[]);
 
 int main() {
-    char testArray[] = "test";
+    char testArray[] = "test test";
+    
+    for(int pntC = 0; pntC >= 0; pntC--) {
     printf("%s", test(testArray));
+    }
     return 0;
 
 }
 
 char *test(char s[]) {
-    s[0] = 'C';
-    return s;
+    int key = 1;
+    for(int count = 0; count < 4; count++) {
+        s[count] = s[count] + key;
+        return s;
+    }
+    
+    
+}
     
 } */
