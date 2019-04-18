@@ -27,7 +27,6 @@ char testEncrypt(char x) {
 }
    return 0;
 }
-
 /* #include <stdio.h>
 
 char *test(char s[]);

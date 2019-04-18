@@ -26,6 +26,8 @@ TO-DO LIST
     - code implementation for decryption WITHOUT a substitution key
     - comment pls
 5. User interface specifications
+    - can use custom run command lines to use file I/O and take a user input menu input a key and cipher text etc. that can be read to stdin instead of 
+      running terminal commands
 6. ASCII character conversions
 7. Key formatting
 8. Convert all algorithms from hard code to Variable input if not done already
