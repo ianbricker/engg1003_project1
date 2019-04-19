@@ -5,7 +5,7 @@ scan string for encryption
 preprocessing of string
     for() loop that allows string to be processed in single characters, as specified by stringSize counter
     convert lowercase to uppercase (subtract 32)
-    convert all ASCII range [97,122] into [65,90]
+    i.e. convert all ASCII range [97,122] into [65,90]
 encrypt the string
     only process with ASCII range [65,90]
 print output
@@ -18,6 +18,7 @@ int main()
     int stringSize = 0; //when code is written double check if both of these variables are required    
     char encryptRot[1000]; //array that will store string
     char character; //used to process individual characters of string
+    int key = 1;
     
     scanf("%s", encryptRot);
     
@@ -31,19 +32,18 @@ int main()
     {
         //printf("%d\n", count); //debug
         character = encryptRot[count];
-        if(character >= 97 && character <= 122) //convert to uppercase
+        if(character >= 'a' && character <= 'z') //convert to uppercase
         {
             character = character - 32;
+            //printf("%c", character); //note: the encrypted string should be printed from this for loop as printing it otherwise is difficult
+        }
+        if(character >= 'A' && character <= 'Z') //encryption completed for only uppercase ASCII characters
+        {
+            character = character + key;
             printf("%c", character);
         }
         
     }
 
-    /*for(int pCount = 0; pCount < stringSize; pCount++) 
-    {
-        printf("%c", character);
-    }
-    */
-//    printf("%s", encryptRot);
     
 }
