@@ -1,54 +1,32 @@
+
+/*PSEUDOCODE
+BEGIN
+scan string for encryption
+preprocessing of string
+    convert lowercase to uppercase (subtract 32)
+    convert all ASCII range [97,122] into [65,90]
+encrypt the string
+    only process with ASCII range [65,90]
+print output
+*/
+
 #include <stdio.h>
-// week 7 lab commit
-char testEncrypt(char x);
 
-int main() { 
-   //int key = 1; /* key is the amount of letter positions the rotation cipher will encrypt */
-   //char x = 0;   /*UPDATE THIS COMMENT x is the character of message text that will be encoded. If x=0, this corresponds to the letter a, while if x = 1, the letter b is represented */ 
-
-   
-   /*char msg[255];
-   scanf("%s", msg);*/
-   
-   char testString[] = "test";
-   
-   /*int count = 0;
-   for(count = 0; count < 4; count++) {
-       x = testString[count] + key;*/
-       printf("%c", x);
-   }
-   
-char testEncrypt(char x) {
-    int key = 1;
-    int count = 0;
-    for(count = 0; count < 4; count++)
-        x = *testString[count] + key;
-        return x;
-}
-   return 0;
-}
-/* #include <stdio.h>
-
-char *test(char s[]);
-
-int main() {
-    char testArray[] = "test test";
+int main() 
+{
+    int index = 0; //when code is written double check if both of these variables are required
+    int stringSize = 0;
+    char encryptRot[];
     
-    for(int pntC = 0; pntC >= 0; pntC--) {
-    printf("%s", test(testArray));
+    scanf("%s", encryptRot);
+    
+    while(encryptRot[index] != '\0') 
+    { 
+        index++;
+        stringSize = index;
     }
-    return 0;
-
-}
-
-char *test(char s[]) {
-    int key = 1;
-    for(int count = 0; count < 4; count++) {
-        s[count] = s[count] + key;
-        return s;
-    }
+    //if() //convert to upper case
     
+    printf("%s", encryptRot);
     
 }
-    
-} */

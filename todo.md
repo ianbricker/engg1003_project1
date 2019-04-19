@@ -1,9 +1,9 @@
 TO-DO LIST
 
 1. Rotation Cipher Encyrption 
-    - Research ciphers, encryption, decryption and code implementation
     - Write a pseudocode algoirthm
     - Attempt code implementations for given text and key (with hard-coded variables)
+    - Add FILE I/O 
     - Extensive Comment implementation (so that a new student would be able to understand)
 2. Rotation cipher decryption
     - More research?
@@ -31,3 +31,4 @@ TO-DO LIST
 6. ASCII character conversions
 7. Key formatting
 8. Convert all algorithms from hard code to Variable input if not done already
+9. Check indenting style is correct and consistent
