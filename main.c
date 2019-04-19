@@ -14,16 +14,14 @@ print output
 
 int main() 
 {
-    int index = 0; //when code is written double check if both of these variables are required
-    int stringSize = 0;
-    char encryptRot[];
+    int stringSize = 0; //when code is written double check if both of these variables are required    
+    char encryptRot[1000];
     
     scanf("%s", encryptRot);
-    
-    while(encryptRot[index] != '\0') 
-    { 
-        index++;
-        stringSize = index;
+    while(encryptRot[stringSize] != '\0') 
+    {
+        stringSize++;
+        printf("%d\n", stringSize);
     }
     //if() //convert to upper case
     
