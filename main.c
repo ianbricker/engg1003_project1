@@ -20,10 +20,11 @@ int main()
     char character; //used to process individual characters of string
     int key = 1;
     
-    scanf("%s", encryptRot);
+    //scanf("%s", encryptRot);
     
     while(encryptRot[stringSize] != '\0') //Measures the length of the input data after it is scanned as a string. Will stop as soon as the final character of a string is met i.e. "\0" NULL
     {
+        scanf("%c", &encryptRot[stringSize]);
         stringSize++; //Increments the index of encryptRot array, while also measuring length
         //printf("%d\n", stringSize); //debug
     }
@@ -41,6 +42,10 @@ int main()
         {
             character = character + key;
             printf("%c", character);
+        }
+        else if((character < 'A' && character > 'Z') || (character < 'a' && character > 'z')) 
+        {
+            printf('%c', character);
         }
         
     }
