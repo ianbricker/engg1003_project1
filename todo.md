@@ -1,11 +1,10 @@
 TO-DO LIST
 
 1. Rotation Cipher Encyrption 
-    - Figure out how to deal with whitespace
+    - F̶i̶g̶u̶r̶e̶ ̶o̶u̶t̶ ̶h̶o̶w̶ ̶t̶o̶ ̶d̶e̶a̶l̶ ̶w̶i̶t̶h̶ ̶w̶h̶i̶t̶e̶s̶p̶a̶c̶e̶
     - Add FILE I/O 
     - Extensive Comment implementation (so that a new student would be able to understand)
 2. Rotation cipher decryption
-    - More research?
     - Write a pseudocode algorithm 
     - Attempt code implementation for given cipher text and key
     - Comment implementation
@@ -29,6 +28,7 @@ TO-DO LIST
       running terminal commands
     - must add a feature that allows user to enter the key for any cipher and must validate if this key can be used e.g. is within range [0,25] for rotation
 6. ASCII character conversions
+    - does the code consider special whitespace ASCIIs such as a paragraph start
 7. Key formatting
 8. Convert all algorithms from hard code to Variable input if not done already
 9. Check indenting style is correct and consistent
