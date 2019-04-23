@@ -47,18 +47,11 @@ int main()
             character += key;
             printf("%c\n", character);
         }
-        else if(character >= ' ' && character <= '@')//perhaps try a SWITCH-CASE statement in this entire for-loop to make this work
+        else if((character >= ' ' && character <= '@') || (character >= '[' && character < 'a') || (character >= '{' && character <= '~')) //perhaps try a SWITCH-CASE statement in this entire for-loop to make this work
         {
             printf("%c\n", character);
         }
-        else if(character >= '[' && character < 'a')
-        {
-            printf("%c\n", character);
-        }
-        else if(character >= '{' && character <= '~')
-        {
-            printf("%c\n", character);
-        }
+       
     }
 
     
