@@ -16,12 +16,16 @@ print output
 int main() 
 {
     int stringSize = 0; //when code is written double check if both of these variables are required    
-    char encryptRot[1000]; //array that will store string
+    char encryptRot[100]; //array that will store string
     char character; //used to process individual characters of string
     int key = 1;
     
+    for(int iniCount = 0; iniCount < 100; iniCount++) //initialises each index position of array = 1 so that no random '\0' are encountered, which will cancel the below WHILE loop
+    {
+        encryptRot[iniCount] = 1;
+    }
     //scanf("%s", encryptRot);
-    
+    //maybe start by initialising entire array as 1 so that null doesnt occur randomly?
     while(encryptRot[stringSize] != '\0') //Measures the length of the input data after it is scanned as a string. Will stop as soon as the final character of a string is met i.e. "\0" NULL
     {
         scanf("%c", &encryptRot[stringSize]);
@@ -29,25 +33,32 @@ int main()
         //printf("%d\n", stringSize); //debug
     }
     
-    for(int count = 0; count < stringSize; count++) 
+    for(int count = 0; count <= stringSize; count++) 
     {
         //printf("%d\n", count); //debug
         character = encryptRot[count];
         if(character >= 'a' && character <= 'z') //convert to uppercase
         {
             character = character - 32;
-            //printf("%c", character); //note: the encrypted string should be printed from this for loop as printing it otherwise is difficult
+            //printf("%c", character); //debug
         }
         if(character >= 'A' && character <= 'Z') //encryption completed for only uppercase ASCII characters
         {
-            character = character + key;
-            printf("%c", character);
+            character += key;
+            printf("%c\n", character);
         }
-        else if((character < 'A' && character > 'Z') || (character < 'a' && character > 'z')) 
+        else if(character >= ' ' && character <= '@')//perhaps try a SWITCH-CASE statement in this entire for-loop to make this work
         {
-            printf('%c', character);
+            printf("%c\n", character);
         }
-        
+        else if(character >= '[' && character < 'a')
+        {
+            printf("%c\n", character);
+        }
+        else if(character >= '{' && character <= '~')
+        {
+            printf("%c\n", character);
+        }
     }
 
     
