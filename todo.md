@@ -5,8 +5,6 @@ TO-DO LIST
     - Add FILE I/O 
     - Extensive Comment implementation (so that a new student would be able to understand)
 2. Rotation cipher decryption
-    - Write a pseudocode algorithm 
-    - Attempt code implementation for given cipher text and key
     - Comment implementation
     - Code implementation for cipher text, WITHOUT a key
     - MOAR COMMENTS
