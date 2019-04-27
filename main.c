@@ -13,19 +13,62 @@ print output
 
 #include <stdio.h>
 
+char encryptRot(char characterRotEncrypt);
+char decryptRot(char characterRotDecrypt);
+
 int main() 
 {
     int stringSize = 0; //when code is written double check if both of these variables are required    
-    char encryptRot[1024]; //array that will store string
+    char encryptArray[1024]; //array that will store string
+    char character; //used to process individual characters of string
+    int key = 1; //key specification for rotation encryption
+    
+    
+    
+    printf("Please select an option: \n");
+    printf("1. Encryption with a Rotation Cipher\n");
+    printf("2. Decryption with a Rotation Cipher (known key)\n");
+    printf("3. Decryption with a Rotation Cipher (unknown key)\n");
+    printf("4. Encryption with a Substitution Cipher\n");
+    printf("5. Decryption with a Substitution Cipher (known key)\n");
+    printf("6. Decryption with a Substituion Cipher (unknown key)\n");
+    printf("Enter selection: ");
+    
+    do 
+    {
+        
+        
+        int selection;
+        scanf("%d", &selection);
+        while(selection >= 1 && selection <= 6) 
+        {
+            
+        }
+    }
+
+
+    
+
+
+
+}
+
+
+
+
+/*int main() 
+{
+    int stringSize = 0; //when code is written double check if both of these variables are required    
+    char encryptArray[1024]; //array that will store string
     char character; //used to process individual characters of string
     int key = 1;
     
     for(int iniCount = 0; iniCount < 1024; iniCount++) //initialises each index position of array = 1 so that no random NULLs are encountered, which will cancel the below WHILE loop
     {
-        encryptRot[iniCount] = 1;
+        encryptArray[iniCount] = 1;
     }
     
-    while(encryptRot[stringSize] != '\0') //Measures the length of the input data after it is scanned as a string. Will stop as soon as the final character of a string is met i.e. "\0" NULL
+    while(encryptArray[stringSize] != '\0') //Measures the length of the input data after it is scanned as a string. Will stop as soon as the final character of a string is met i.e. "\0" NULL
     {
         scanf("%c", &encryptRot[stringSize]);
         stringSize++; //Increments the index of encryptRot array, while also measuring length
@@ -35,7 +78,7 @@ int main()
     for(int count = 0; count <= stringSize; count++) 
     {
         //printf("%d\n", count); //debug
-        character = encryptRot[count];
+        character = encryptArray[count];
         if(character >= 'a' && character <= 'z') //convert to uppercase
         {
             character = character - 32;
@@ -54,4 +97,4 @@ int main()
     }
 
     
-}
+}*/
