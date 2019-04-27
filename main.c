@@ -21,6 +21,7 @@ int main()
     char encryptArray[1024]; //array that will store string
     char character; //used to process individual characters of string
     int key = 1; //key specification for rotation encryption
+    int userSelection; //integer that must range between [1,6] in order to specify function
     
     for(int iniCount = 0; iniCount < 1024; iniCount++) //initialises each index position of array = 1 so that no random NULLs are encountered, which will cancel the below WHILE loop
     {
@@ -31,10 +32,11 @@ int main()
     {
         scanf("%c", &encryptArray[stringSize]);
         stringSize++; //Increments the index of encryptRot array, while also measuring length
+        
     }
     
-    do 
-    {
+    encryptArray[stringSize + 1] = '\0';
+    
         printf("\nPlease select an option: \n");
         printf("1. Encryption with a Rotation Cipher\n");
         printf("2. Decryption with a Rotation Cipher (known key)\n");
@@ -44,11 +46,13 @@ int main()
         printf("6. Decryption with a Substituion Cipher (unknown key)\n");
         printf("Enter selection: ");
         
-        int selection;
-        FILE *inputSelection;
-        inputSelection = fopen("file", "r");
+    
         
-    } while(inputSelection < 1 && inputSelection > 6);
+        FILE *inputUser;
+        
+        inputUser = fopen("file", "r");
+        fscanf(inputUser, "%d", &userSelection);
+        
 
     
     
@@ -62,9 +66,7 @@ int main()
         
         if(character >= 'A' && character <= 'Z') //encryption completed for only uppercase ASCII characters
         {
-            if(selection >= 1 && selection <= 6) 
-            {
-                switch(selection) 
+                switch(userSelection) 
                 {
                     case 1:
                         character = encryptRot(character, key);
@@ -78,7 +80,6 @@ int main()
     
                 }
                 
-            }
         }
         
         else if((character >= ' ' && character <= '@') || (character >= '[' && character < 'a') || (character >= '{' && character <= '~')) //this else-if statement reads any punctuation, numbers or whitespace to stdout unchanged 
