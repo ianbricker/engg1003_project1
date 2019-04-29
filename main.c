@@ -5,10 +5,10 @@ char decryptRot(char character, int key); //function prototype for the decryptio
 
 int main() 
 {
-    FILE *userInput;
-    userInput = fopen("input", "r");
-    FILE *userOutput;
-    userOutput = fopen("output", "w");
+    FILE *userInput; //initialises variable with format specifier FILE to be used for reading cipher text and a userSelection
+    userInput = fopen("input", "r"); //initialises "input" file as reading only
+    FILE *userOutput; //initialises variable with formate specifier FILE to be used writing cipher text
+    userOutput = fopen("output", "w"); //initialises "output" file as writing only
     
     int stringSize = 0; //incremented in the first while() loop below so that the array is measured. stringSize is also needed as an index specifier to take individual characters out of the array for processing.    
     char encryptArray[1024]; //Large array that stores the string that will be encrypted or decrypted
@@ -17,9 +17,7 @@ int main()
     int userSelection = 0; //Integer that selects function to be used. 1 = EncryptRot. 2 = DecryptRot
     
     
-    fscanf(userInput, "%d" "%[^\n]s", &userSelection, encryptArray);
-    
-    //scanf("%[^\n]s", encryptArray); //scans the entire string as specified in the "test" file (the runCipher command is required). Will read whitespace and stops at a NULL value
+    fscanf(userInput, "%d" "%[^\n]s", &userSelection, encryptArray); //scans a userSelection for task specifier and cipher/plain text from "input" file. This will read whitespace and stop at a NULL value
     
     while(encryptArray[stringSize] != '\0') //while() loop begins at 0th index position of string and exits after the end NULL is met
     {
@@ -49,7 +47,7 @@ int main()
                 
         }
         
-        else if((character >= ' ' && character <= '@') || (character >= '[' && character < 'a') || (character >= '{' && character <= '~')) //this else-if statement reads any punctuation, numbers or whitespace to stdout unchanged 
+        else if((character >= ' ' && character <= '@') || (character >= '[' && character < 'a') || (character >= '{' && character <= '~')) //this else-if statement reads any punctuation, numbers or whitespace to stdout and "output" file unchanged 
         {
            fprintf(userOutput, "%c", character);
            printf("%c", character); //prints punctuation, whitespace or numbers 
