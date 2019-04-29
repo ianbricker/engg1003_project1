@@ -5,14 +5,21 @@ char decryptRot(char character, int key); //function prototype for the decryptio
 
 int main() 
 {
+    FILE *userInput;
+    userInput = fopen("input", "r");
+    FILE *userOutput;
+    userOutput = fopen("output", "w");
+    
     int stringSize = 0; //incremented in the first while() loop below so that the array is measured. stringSize is also needed as an index specifier to take individual characters out of the array for processing.    
     char encryptArray[1024]; //Large array that stores the string that will be encrypted or decrypted
     char character; //used to process individual characters of string
     int key = 7; //key specification for a rotation cipher. This key works for both encryption and decryption
-    int userSelection = 2; //Integer that selects function to be used. 1 = EncryptRot. 2 = DecryptRot
+    int userSelection = 0; //Integer that selects function to be used. 1 = EncryptRot. 2 = DecryptRot
     
     
-    scanf("%[^\n]s", encryptArray); //scans the entire string as specified in the "test" file (the runCipher command is required). Will read whitespace and stops at a NULL value
+    fscanf(userInput, "%d" "%[^\n]s", &userSelection, encryptArray);
+    
+    //scanf("%[^\n]s", encryptArray); //scans the entire string as specified in the "test" file (the runCipher command is required). Will read whitespace and stops at a NULL value
     
     while(encryptArray[stringSize] != '\0') //while() loop begins at 0th index position of string and exits after the end NULL is met
     {
@@ -31,9 +38,11 @@ int main()
                 case 1: //userSelection = 1 triggers the rotation encryption "encryptRot()"
                     character = encryptRot(character, key); //encrypts a single character at a time
                     printf("%c", character); //prints the encrypted character
+                    fprintf(userOutput, "%c", character);
                     break; //breaks from switch case statement so that the character is not processed and printed twice as an encrypted and decrypted characteer
                 case 2: //userSelection = 2 triggers the rotation decrytion "decryptRot()"
                     character = decryptRot(character, key); //decrypts a single character at a tie
+                    fprintf(userOutput, "%c", character);
                     printf("%c", character); //prints the decrypted character
                     break;
             }
@@ -42,7 +51,8 @@ int main()
         
         else if((character >= ' ' && character <= '@') || (character >= '[' && character < 'a') || (character >= '{' && character <= '~')) //this else-if statement reads any punctuation, numbers or whitespace to stdout unchanged 
         {
-            printf("%c", character); //prints punctuation, whitespace or numbers 
+           fprintf(userOutput, "%c", character);
+           printf("%c", character); //prints punctuation, whitespace or numbers 
         }
        
     }
