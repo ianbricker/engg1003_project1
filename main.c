@@ -49,10 +49,10 @@ int main()
 
 }
 
-char encryptRot(char character, int key) //function definition 
+char encryptRot(char character, int key) //function definition for encryption
 {
-    character += key;
-    if(character < 'A') 
+    character += key; //performs the fundamental operation of a rotation encryption. The ASCII value of the character is shifted by the value of key. This syntax is equivalent to character = character + key
+    if(character < 'A') //the below if-elseif statements account for the "overrotation" that occurs in some characters during encryption. For example if Z is rotated by a key of 1, it takes the ASCII value of 91 or '['. This can be solved by subtracting 26, and finding the value 65 or 'A'
     {
         character = character + 26;
     }
@@ -60,13 +60,13 @@ char encryptRot(char character, int key) //function definition
     {
         character = character - 26;
     }
-    return character;
+    return character; //returns the encrypted value of character for printing in int main
 }
 
-char decryptRot(char character, int key) 
+char decryptRot(char character, int key) //function definition for decryption
 {
-    character -= key;
-    if(character < 'A') 
+    character -= key; //performs the fundamental operation of a rotation decryption. ASCII value of a character is shifted by the value of the key, in the opposite direction as an encryption key. This syntax is equivalent to character = character - key
+    if(character < 'A') //performs the same function as described in the comment on line 55
     {
         character = character + 26;
     }
@@ -74,6 +74,6 @@ char decryptRot(char character, int key)
     {
         character = character - 26;
     }
-   return character;
+   return character; //returns the decrypted value of character for printing in int main
 }
 
