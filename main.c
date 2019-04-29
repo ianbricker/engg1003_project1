@@ -21,44 +21,16 @@ int main()
     char encryptArray[1024]; //array that will store string
     char character; //used to process individual characters of string
     int key = 1; //key specification for rotation encryption
-    int userSelection; //integer that must range between [1,6] in order to specify function
+    int userSelection = 2; //integer that must range between [1,6] in order to specify function
     
-    for(int iniCount = 0; iniCount < 1024; iniCount++) //initialises each index position of array = 1 so that no random NULLs are encountered, which will cancel the below WHILE loop
+    
+    scanf("%[^\n]s", encryptArray);
+    
+    while(encryptArray[stringSize] != '\0') 
     {
-        encryptArray[iniCount] = 1;
-    }
-    
-    while(encryptArray[stringSize] != '\0') //Measures the length of the input data after it is scanned as a string. Will stop as soon as the final character of a string is met i.e. "\0" NULL
-    {
-        scanf("%c", &encryptArray[stringSize]);
-        stringSize++; //Increments the index of encryptRot array, while also measuring length
+        character = encryptArray[stringSize];
+        stringSize++;
         
-    }
-    
-    encryptArray[stringSize + 1] = '\0';
-    
-        printf("\nPlease select an option: \n");
-        printf("1. Encryption with a Rotation Cipher\n");
-        printf("2. Decryption with a Rotation Cipher (known key)\n");
-        printf("3. Decryption with a Rotation Cipher (unknown key)\n");
-        printf("4. Encryption with a Substitution Cipher\n");
-        printf("5. Decryption with a Substitution Cipher (known key)\n");
-        printf("6. Decryption with a Substituion Cipher (unknown key)\n");
-        printf("Enter selection: ");
-        
-    
-        
-        FILE *inputUser;
-        
-        inputUser = fopen("file", "r");
-        fscanf(inputUser, "%d", &userSelection);
-        
-
-    
-    
-    for(int count = 0; count <= stringSize; count++) 
-    {
-        character = encryptArray[count];
         if(character >= 'a' && character <= 'z') //convert to uppercase
         {
             character = character - 32;
@@ -66,19 +38,17 @@ int main()
         
         if(character >= 'A' && character <= 'Z') //encryption completed for only uppercase ASCII characters
         {
-                switch(userSelection) 
-                {
-                    case 1:
-                        character = encryptRot(character, key);
-                        printf("%c", character);
-                        break;
-                    case 2:
-                        character = decryptRot(character, key);
-                        printf("%c", character);
-                        break;
-                    //case 3:
-    
-                }
+            switch(userSelection)
+            {
+                case 1:
+                    character = encryptRot(character, key);
+                    printf("%c", character);
+                    break;
+                case 2:
+                    character = decryptRot(character, key);
+                    printf("%c", character);
+                    break;
+            }
                 
         }
         
@@ -88,25 +58,6 @@ int main()
         }
        
     }
-    
-    
-    
-    /*do 
-    {
-        
-        
-        int selection;
-        scanf("%d", &selection);
-        while(selection >= 1 && selection <= 6) 
-        {
-            //switch case statement
-        }
-    } */
-
-
-    
-
-
 
 }
 
